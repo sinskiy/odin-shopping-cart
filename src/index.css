@@ -1,5 +1,16 @@
 /* variables */
 :root {
+  --background: #f9faef;
+  --surface: #eeefe3;
+  --text: #1a1c16;
+  --text-variation: #44483d;
+  --primary: #4c662b;
+  --on-primary: #ffffff;
+  --outline: #75796c;
+  --error: #ba1a1a;
+
+  --rounded: 9999px;
+  --rounded-card: 1rem;
 }
 
 /* root-only styling */
@@ -38,4 +49,17 @@ input {
 ul[role="list"] {
   list-style-type: none;
   padding: 0;
+}
+
+/* dark mode variables */
+@media screen and (prefers-color-scheme: dark) {
+  :root {
+    --background: #12140e;
+    --surface: #1e201a;
+    --text: #e2e3d8;
+    --text-variation: #c5c8ba;
+    --primary: #b1d18a;
+    --on-primary: #1f3701;
+    --error: #ffb4ab;
+  }
 }

@@ -8,6 +8,10 @@ html {
 }
 
 /*  global styling */
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
 body {
   font-family:
     system-ui,
@@ -21,4 +25,17 @@ body {
     "Open Sans",
     "Helvetica Neue",
     sans-serif;
+}
+img {
+  display: block;
+  max-width: 100%;
+}
+button,
+input {
+  font: inherit;
+  color: inherit;
+}
+ul[role="list"] {
+  list-style-type: none;
+  padding: 0;
 }

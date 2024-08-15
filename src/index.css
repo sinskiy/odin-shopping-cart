@@ -51,6 +51,12 @@ ul[role="list"] {
   padding: 0;
 }
 
+/* global layout */
+body {
+  max-width: 1280px;
+  margin: 2rem auto;
+}
+
 /* dark mode variables */
 @media screen and (prefers-color-scheme: dark) {
   :root {

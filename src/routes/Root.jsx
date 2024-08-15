@@ -4,11 +4,11 @@ export default function Root() {
   return (
     <>
       <header>
-        <Link to="/">Shopping cart</Link>
+        <Link to="/">buy things</Link>
         <nav>
-          <NavLink to="/">Home</NavLink>
-          <NavLink to="/shop">Shop</NavLink>
-          <NavLink to="/cart">Cart</NavLink>
+          <NavLink to="/">home</NavLink>
+          <NavLink to="/shop">shop</NavLink>
+          <NavLink to="/cart">cart</NavLink>
         </nav>
       </header>
       <main>

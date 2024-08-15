@@ -1,0 +1,16 @@
+.home {
+  display: inline-block;
+
+  position: relative;
+}
+
+.hero-text {
+  position: absolute;
+  inset: 0;
+  width: fit-content;
+  height: fit-content;
+  margin: auto;
+  text-align: center;
+
+  font-size: 2rem;
+}

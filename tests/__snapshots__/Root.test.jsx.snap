@@ -22,6 +22,12 @@ exports[`Root component > is the same as a snapshot 1`] = `
       >
         Shop
       </a>
+      <a
+        class=""
+        href="/cart"
+      >
+        Cart
+      </a>
     </nav>
   </header>
   <main>

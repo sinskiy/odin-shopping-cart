@@ -8,13 +8,15 @@ const routes = [
     path: "/",
     element: <Root />,
     children: [
-      { index: true, element: <Home /> },
+      { index: true, name: "home", element: <Home /> },
       {
         path: "/shop",
+        name: "shop",
         element: <Shop />,
       },
       {
         path: "/cart",
+        name: "cart",
         element: <Cart />,
       },
     ],

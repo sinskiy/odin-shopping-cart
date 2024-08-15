@@ -1,3 +1,4 @@
+import { Fragment } from "react";
 import routes from ".";
 import {
   header,
@@ -20,15 +21,18 @@ export default function Root() {
         </Link>
         <nav className={nav}>
           {links.map((link, i) => (
-            <NavLink
-              className={({ isActive, isPending }) =>
-                `${isActive ? active : isPending ? pending : ""} ${navLink} ${link.index ? indexNavLink : ""}`
-              }
-              to={link.index ? "/" : link.path}
-              key={i}
-            >
-              {link.name}
-            </NavLink>
+            <Fragment key={i}>
+              {!link.hidden && (
+                <NavLink
+                  className={({ isActive, isPending }) =>
+                    `${isActive ? active : isPending ? pending : ""} ${navLink} ${link.index ? indexNavLink : ""}`
+                  }
+                  to={link.index ? "/" : link.path}
+                >
+                  {link.name}
+                </NavLink>
+              )}
+            </Fragment>
           ))}
         </nav>
       </header>

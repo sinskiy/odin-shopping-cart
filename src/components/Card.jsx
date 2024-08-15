@@ -15,7 +15,10 @@ import { useState } from "react";
 
 export async function cardAction({ request }) {
   const formData = await request.formData();
-  const [id, amount] = [...formData.entries()][0];
+  const formDataArray = [...formData.entries()];
+  if (formDataArray.length !== 1) return null;
+
+  const [id, amount] = formDataArray[0];
   updateCart(Number(id), Number(amount));
   return null;
 }

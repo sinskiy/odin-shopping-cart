@@ -24,15 +24,20 @@ const CartEntry = ({ id, title, price, amount, imageUrl }) => {
           <p className={cartEntryPrice}>{price}</p>
           <h3 className={cartEntryTitle}>{title}</h3>
         </div>
-        <Form method="post">
-          <NumberPicker
-            value={value}
-            setValue={setValue}
-            buttons="submit"
-            id={`${id}-count-cart`}
-            name={`${id}`}
-          />
-        </Form>
+        <div>
+          <Form method="post">
+            <NumberPicker
+              value={value}
+              setValue={setValue}
+              buttons="submit"
+              id={`${id}-count-cart`}
+              name={`${id}`}
+            />
+          </Form>
+          <Form method="delete" action={`${id}`}>
+            <button type="submit">delete</button>
+          </Form>
+        </div>
       </div>
     </div>
   );

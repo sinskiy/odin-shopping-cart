@@ -1,0 +1,33 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Root component > is the same as a snapshot 1`] = `
+<div>
+  <header>
+    <a
+      href="/"
+    >
+      Shopping cart
+    </a>
+    <nav>
+      <a
+        aria-current="page"
+        class="active"
+        href="/"
+      >
+        Home
+      </a>
+      <a
+        class=""
+        href="/shop"
+      >
+        Shop
+      </a>
+    </nav>
+  </header>
+  <main>
+    <div>
+      home
+    </div>
+  </main>
+</div>
+`;

@@ -1,3 +1,4 @@
+import Cart from "./Cart";
 import Home from "./Home";
 import Root from "./Root";
 import Shop from "./Shop";
@@ -11,6 +12,10 @@ const routes = [
       {
         path: "/shop",
         element: <Shop />,
+      },
+      {
+        path: "/cart",
+        element: <Cart />,
       },
     ],
   },

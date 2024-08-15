@@ -38,3 +38,9 @@
   opacity: 0.5;
   cursor: progress;
 }
+
+@media (max-width: 500px) {
+  .index-nav-link {
+    display: none;
+  }
+}

@@ -22,7 +22,7 @@ export default function Root() {
         <nav className={nav}>
           {links.map((link, i) => (
             <Fragment key={i}>
-              {!link.hidden && (
+              {link.element && (
                 <NavLink
                   className={({ isActive, isPending }) =>
                     `${isActive ? active : isPending ? pending : ""} ${navLink} ${link.index ? indexNavLink : ""}`

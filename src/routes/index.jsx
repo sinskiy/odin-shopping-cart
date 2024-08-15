@@ -1,6 +1,6 @@
 import { cardAction } from "../components/Card";
 import Cart, { cartLoader } from "./Cart";
-import Destroy, { destroyAction } from "./Destroy";
+import { destroyAction } from "./Destroy";
 import Home from "./Home";
 import Root from "./Root";
 import Shop, { shopLoader } from "./Shop";
@@ -27,8 +27,6 @@ const routes = [
       },
       {
         path: "/cart/:cardId",
-        element: <Destroy />,
-        hidden: true,
         action: destroyAction,
       },
     ],

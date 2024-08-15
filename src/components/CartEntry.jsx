@@ -35,7 +35,13 @@ const CartEntry = ({ id, title, price, amount, imageUrl }) => {
             />
           </Form>
           <Form method="delete" action={`${id}`}>
-            <button type="submit">delete</button>
+            <button
+              type="submit"
+              style={{ marginTop: "1rem" }}
+              className="styled primary"
+            >
+              delete
+            </button>
           </Form>
         </div>
       </div>

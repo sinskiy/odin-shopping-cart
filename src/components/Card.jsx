@@ -6,6 +6,7 @@ import {
   cardPrice,
   cardTitle,
   cardButton,
+  cardForm,
 } from "./Card.module.css";
 import NumberPicker from "./NumberPicker";
 
@@ -19,17 +20,19 @@ const Card = ({
 }) => {
   return (
     <div className={card}>
-      <figure>
-        <img src={imageUrl} alt="" className={cardImage} />
-        <figcaption className={cardContent}>
+      <img src={imageUrl} alt={cardTitle} className={cardImage} />
+      <div className={cardContent}>
+        <div>
           <span className={cardPrice}>{price}</span>
           <h3 className={cardTitle}>{title}</h3>
-        </figcaption>
-      </figure>
-      <NumberPicker id={`${title}-count`} />
-      <form method="post" className={cardButton}>
-        <button className="styled primary">add to cart</button>
-      </form>
+        </div>
+        <form method="post" className={cardForm}>
+          <NumberPicker id={`${title}-count`} />
+          <button className={`styled primary ${cardButton}`}>
+            add to cart
+          </button>
+        </form>
+      </div>
     </div>
   );
 };

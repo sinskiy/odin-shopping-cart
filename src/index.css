@@ -94,16 +94,14 @@ section > h2 {
   margin-top: 4rem;
   margin-bottom: 3rem;
 }
-p {
-  line-height: 1.5;
-  max-width: 80ch;
-  margin: 0 auto;
-}
 
 /* global classes */
 .text p {
-  margin-bottom: 1rem;
+  margin: 0 auto 1rem auto;
+  max-width: 80ch;
+
   color: var(--text-variation);
+  line-height: 1.5;
 }
 .styled.primary {
   background-color: var(--primary);

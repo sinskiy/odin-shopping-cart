@@ -1,6 +1,33 @@
-.cartEntryTitle {
-  composes: cardTitle from "./Card.module.css";
+.cart-entry {
+  margin-bottom: 1rem;
+
+  display: flex;
+
+  background-color: var(--surface);
+  border-radius: var(--rounded-card);
 }
-.cartEntryPrice {
-  composes: cardPrice from "./Card.module.css";
+.cart-entry-image {
+  width: 12rem;
+  height: 12rem;
+  aspect-ratio: 1/1;
+  object-fit: cover;
+  border-radius: var(--rounded-card);
+}
+
+.cart-entry-content {
+  margin: 2rem;
+
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+.cart-entry-total-price {
+  composes: card-price from "./Card.module.css";
+}
+.cart-entry-title {
+  composes: card-title from "./Card.module.css";
+  margin-top: 1rem;
+}
+.cart-entry-price {
+  color: var(--text-variation);
 }

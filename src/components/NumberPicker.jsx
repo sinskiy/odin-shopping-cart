@@ -1,11 +1,14 @@
-import { string } from "prop-types";
+import { func, number, oneOf, string } from "prop-types";
 import { picker, pickerButton, pickerInput } from "./NumberPicker.module.css";
-import { useState } from "react";
 
-const NumberPicker = ({ id, name = id }) => {
+const NumberPicker = ({
+  value,
+  setValue,
+  id,
+  name = id,
+  buttons = "button",
+}) => {
   const buttonClasses = `${pickerButton} styled icon`;
-
-  const [value, setValue] = useState(1);
 
   const min = 1;
   function handleValueChange(newValue) {
@@ -16,6 +19,7 @@ const NumberPicker = ({ id, name = id }) => {
     <div className={picker}>
       <button
         onClick={() => handleValueChange(value - 1)}
+        type={buttons}
         className={buttonClasses}
         aria-label="decrement"
       >
@@ -32,6 +36,7 @@ const NumberPicker = ({ id, name = id }) => {
       />
       <button
         onClick={() => handleValueChange(value + 1)}
+        type={buttons}
         className={buttonClasses}
         aria-label="increment"
       >
@@ -41,8 +46,11 @@ const NumberPicker = ({ id, name = id }) => {
   );
 };
 NumberPicker.propTypes = {
-  id: string,
+  value: number.isRequired,
+  setValue: func.isRequired,
+  id: string.isRequired,
   name: string,
+  buttons: oneOf(["button", "submit", "reset"]),
 };
 
 export default NumberPicker;

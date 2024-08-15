@@ -1,5 +1,5 @@
 import { cardAction } from "../components/Card";
-import Cart from "./Cart";
+import Cart, { cartLoader } from "./Cart";
 import Home from "./Home";
 import Root from "./Root";
 import Shop, { shopLoader } from "./Shop";
@@ -21,6 +21,8 @@ const routes = [
         path: "/cart",
         name: "cart",
         element: <Cart />,
+        loader: cartLoader,
+        action: cardAction,
       },
     ],
   },

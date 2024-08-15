@@ -1,3 +1,9 @@
+import Card from "./Card";
+
 export default function Shop() {
-  return <div>hello world</div>;
+  return (
+    <section>
+      <Card />
+    </section>
+  );
 }

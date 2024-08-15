@@ -1,0 +1,36 @@
+.picker {
+  margin-left: 1rem;
+
+  display: flex;
+  gap: 0.5rem;
+
+  --size: 3rem;
+}
+
+.picker-input {
+  appearance: textfield;
+}
+.picker-input::-webkit-outer-spin-button,
+.picker-input::-webkit-inner-spin-button {
+  margin: 0;
+  appearance: none;
+}
+
+.picker-input {
+  width: var(--size);
+  height: var(--size);
+
+  border-radius: 0.5rem;
+  background-color: var(--surface-high);
+  text-align: center;
+}
+.picker-input:focus {
+  outline: 2px solid var(--primary);
+}
+
+.picker-button {
+  width: var(--size);
+  height: var(--size);
+
+  background-color: var(--surface-high);
+}

@@ -14,7 +14,7 @@ export default function Root() {
           {links.map((link, i) => (
             <NavLink
               className={({ isActive, isPending }) =>
-                (isActive ? active : isPending ? pending : "") + ` ${navLink}`
+                `${isActive ? active : isPending ? pending : ""} ${navLink}`
               }
               to={link.index ? "/" : link.path}
               key={i}

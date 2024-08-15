@@ -1,0 +1,34 @@
+.card {
+  width: fit-content;
+  background-color: var(--surface);
+  border-radius: var(--rounded-card);
+  padding-bottom: 2rem;
+}
+
+.card-image {
+  border-radius: var(--rounded-card);
+}
+
+.card-content {
+  margin-top: 1rem;
+  margin-left: 1rem;
+  margin-bottom: 2rem;
+}
+.card-price {
+  font-size: 2rem;
+  font-weight: 600;
+}
+.card-title {
+  margin-top: 0.5rem;
+  font-size: 1rem;
+  font-weight: 400;
+}
+
+.card-button {
+  margin-left: 1rem;
+  margin-right: 1rem;
+  margin-top: 1rem;
+}
+.card-button button {
+  width: 100%;
+}

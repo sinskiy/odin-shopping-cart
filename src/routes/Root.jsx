@@ -12,7 +12,7 @@ import {
 import { Link, NavLink, Outlet } from "react-router-dom";
 
 export default function Root() {
-  const links = routes[0].children;
+  const links = routes[0].children[0].children;
   return (
     <>
       <header className={header}>

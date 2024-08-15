@@ -4,7 +4,7 @@ export default function Root() {
   return (
     <>
       <header>
-        <Link to="/">buy things</Link>
+        <Link to="/">buyThings</Link>
         <nav>
           <NavLink to="/">home</NavLink>
           <NavLink to="/shop">shop</NavLink>

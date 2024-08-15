@@ -25,7 +25,8 @@ const CartEntry = ({ id, title, price, amount, imageUrl }) => {
           <h3 className={cartEntryTitle}>{title}</h3>
         </div>
         <div>
-          <Form method="post">
+          <Form method="post" action={`/cart/${id}/${value}`}>
+            <input type="hidden" name="origin" value={location.pathname} />
             <NumberPicker
               value={value}
               setValue={setValue}
@@ -34,7 +35,8 @@ const CartEntry = ({ id, title, price, amount, imageUrl }) => {
               name={`${id}`}
             />
           </Form>
-          <Form method="delete" action={`${id}`}>
+          <Form method="delete" action={`/cart/${id}`}>
+            <input type="hidden" name="origin" value={location.pathname} />
             <button
               type="submit"
               style={{ marginTop: "1rem" }}

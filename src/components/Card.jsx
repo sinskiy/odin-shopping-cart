@@ -10,21 +10,11 @@ import {
 } from "./Card.module.css";
 import NumberPicker from "./NumberPicker";
 import { Form } from "react-router-dom";
-import { updateCart } from "../cart";
 import { useState } from "react";
 
-export async function cardAction({ request }) {
-  const formData = await request.formData();
-  const formDataArray = [...formData.entries()];
-  if (formDataArray.length !== 1) return null;
+const Card = ({ id, title, price, imageUrl, amount }) => {
+  const [value, setValue] = useState(amount ?? 1);
 
-  const [id, amount] = formDataArray[0];
-  updateCart(Number(id), Number(amount));
-  return null;
-}
-
-const Card = ({ id, title, price, imageUrl }) => {
-  const [value, setValue] = useState(1);
   return (
     <div className={card}>
       <img src={imageUrl} alt={cardTitle} className={cardImage} />
@@ -33,17 +23,43 @@ const Card = ({ id, title, price, imageUrl }) => {
           <span className={cardPrice}>{price}$</span>
           <h3 className={cardTitle}>{title}</h3>
         </div>
-        <Form method="post" className={cardForm}>
-          <NumberPicker
-            value={value}
-            setValue={setValue}
-            id={`${id}-count`}
-            name={`${id}`}
-          />
-          <button type="submit" className={`styled primary ${cardButton}`}>
-            add to cart
-          </button>
-        </Form>
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "space-between",
+            alignItems: "center",
+          }}
+        >
+          <Form
+            method="post"
+            action={`/cart/${id}/${value}`}
+            className={cardForm}
+          >
+            <input type="hidden" name="origin" value={location.pathname} />
+            {amount ? (
+              <>
+                <NumberPicker
+                  value={value}
+                  setValue={setValue}
+                  id={`${id}-count`}
+                  name={`${id}`}
+                />
+              </>
+            ) : (
+              <button type="submit" className={`styled primary ${cardButton}`}>
+                add to cart
+              </button>
+            )}
+          </Form>
+          {amount && (
+            <Form method="delete" action={`/cart/${id}`}>
+              <input type="hidden" name="origin" value={location.pathname} />
+              <button type="submit" className="styled primary">
+                delete
+              </button>
+            </Form>
+          )}
+        </div>
       </div>
     </div>
   );
@@ -53,6 +69,7 @@ Card.propTypes = {
   title: string.isRequired,
   price: number.isRequired,
   imageUrl: string.isRequired,
+  amount: number,
 };
 
 export default Card;

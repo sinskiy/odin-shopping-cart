@@ -14,8 +14,6 @@ export function updateCart(id, amount) {
 export function deleteCartEntry(id) {
   const cart = getCart();
 
-  console.log("before: " + cart);
   delete cart[id];
-  console.log("after: " + cart);
   localStorage.setItem("cart", JSON.stringify(cart));
 }

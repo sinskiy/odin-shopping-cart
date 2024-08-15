@@ -1,9 +1,9 @@
-import { cardAction } from "../components/Card";
 import Cart, { cartLoader } from "./Cart";
 import { destroyAction } from "./Destroy";
 import Home from "./Home";
 import Root from "./Root";
 import Shop, { shopLoader } from "./Shop";
+import { updateAction } from "./Update";
 
 const routes = [
   {
@@ -16,18 +16,20 @@ const routes = [
         name: "shop",
         element: <Shop />,
         loader: shopLoader,
-        action: cardAction,
       },
       {
         path: "/cart",
         name: "cart",
         element: <Cart />,
         loader: cartLoader,
-        action: cardAction,
       },
       {
         path: "/cart/:cardId",
         action: destroyAction,
+      },
+      {
+        path: "/cart/:cardId/:amount",
+        action: updateAction,
       },
     ],
   },

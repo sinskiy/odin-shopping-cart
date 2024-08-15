@@ -1,7 +1,9 @@
 import { redirect } from "react-router-dom";
 import { deleteCartEntry } from "../cart";
 
-export function destroyAction({ params }) {
+export async function destroyAction({ request, params }) {
   deleteCartEntry(params.cardId);
-  return redirect("/cart");
+
+  const origin = (await request.formData()).get("origin");
+  return redirect(origin);
 }

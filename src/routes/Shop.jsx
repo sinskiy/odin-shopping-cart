@@ -1,6 +1,6 @@
 import { useLoaderData } from "react-router-dom";
 import { getCards } from "../cards";
-import Card from "./Card";
+import Card from "../components/Card";
 
 export async function shopLoader() {
   const cards = await getCards();

@@ -20,8 +20,8 @@ const CartEntry = ({ id, title, price, amount, imageUrl }) => {
       <img className={cartEntryImage} src={imageUrl} alt={title} />
       <div className={cartEntryContent}>
         <div>
-          <p className={cartEntryTotalPrice}>{totalPrice}</p>
-          <p className={cartEntryPrice}>{price}</p>
+          <p className={cartEntryTotalPrice}>{totalPrice}$</p>
+          <p className={cartEntryPrice}>{price}$ per item</p>
           <h3 className={cartEntryTitle}>{title}</h3>
         </div>
         <div>

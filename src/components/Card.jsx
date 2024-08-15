@@ -30,7 +30,7 @@ const Card = ({ id, title, price, imageUrl }) => {
       <img src={imageUrl} alt={cardTitle} className={cardImage} />
       <div className={cardContent}>
         <div>
-          <span className={cardPrice}>{price}</span>
+          <span className={cardPrice}>{price}$</span>
           <h3 className={cardTitle}>{title}</h3>
         </div>
         <Form method="post" className={cardForm}>

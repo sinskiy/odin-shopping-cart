@@ -36,6 +36,9 @@ body {
     "Open Sans",
     "Helvetica Neue",
     sans-serif;
+
+  background-color: var(--background);
+  color: var(--text);
 }
 img {
   display: block;
@@ -70,6 +73,7 @@ p {
 /* global classes */
 .text p {
   margin-bottom: 1rem;
+  color: var(--text-variation);
 }
 
 /* dark mode variables */

@@ -3,6 +3,9 @@
 
   position: relative;
 }
+.hero img {
+  border-radius: var(--rounded-card);
+}
 .hero-text {
   position: absolute;
   inset: 0;
@@ -12,4 +15,5 @@
   text-align: center;
 
   font-size: 2rem;
+  color: white;
 }

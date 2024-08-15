@@ -1,7 +1,7 @@
 import Cart from "./Cart";
 import Home from "./Home";
 import Root from "./Root";
-import Shop from "./Shop";
+import Shop, { shopLoader } from "./Shop";
 
 const routes = [
   {
@@ -13,6 +13,7 @@ const routes = [
         path: "/shop",
         name: "shop",
         element: <Shop />,
+        loader: shopLoader,
       },
       {
         path: "/cart",

@@ -1,5 +1,5 @@
 import routes from ".";
-import { header, logo, nav, active, pending } from "./Root.module.css";
+import { header, logo, nav, active, pending, navLink } from "./Root.module.css";
 import { Link, NavLink, Outlet } from "react-router-dom";
 
 export default function Root() {
@@ -14,7 +14,7 @@ export default function Root() {
           {links.map((link, i) => (
             <NavLink
               className={({ isActive, isPending }) =>
-                isActive ? active : isPending ? pending : ""
+                (isActive ? active : isPending ? pending : "") + ` ${navLink}`
               }
               to={link.index ? "/" : link.path}
               key={i}

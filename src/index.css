@@ -1,13 +1,13 @@
 /* variables */
 :root {
-  --background: #f9faef;
-  --surface: #eeefe3;
-  --text: #1a1c16;
-  --text-variation: #44483d;
-  --primary: #4c662b;
+  --background: #fef9eb;
+  --surface: #f2eee0;
+  --text: #1d1c14;
+  --text-variation: #49473a;
+  --primary: #656015;
   --on-primary: #ffffff;
-  --outline: #75796c;
-  --error: #ba1a1a;
+  --secondary: #3a608f;
+  --on-secondary: #ffffff;
 
   --rounded: 9999px;
   --rounded-card: 1rem;
@@ -101,12 +101,13 @@ p {
 /* dark mode variables */
 @media screen and (prefers-color-scheme: dark) {
   :root {
-    --background: #12140e;
-    --surface: #1e201a;
-    --text: #e2e3d8;
-    --text-variation: #c5c8ba;
-    --primary: #b1d18a;
-    --on-primary: #1f3701;
-    --error: #ffb4ab;
+    --background: #14140c;
+    --surface: #212018;
+    --text: #e7e2d5;
+    --text-variation: #cbc7b5;
+    --primary: #d0c973;
+    --on-primary: #353200;
+    --secondary: #a3c9fe;
+    --on-secondary: #00315c;
   }
 }

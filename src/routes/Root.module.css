@@ -12,7 +12,7 @@
 }
 
 .logo {
-  color: var(--primary);
+  color: var(--secondary);
   text-decoration: none;
   font-size: 1.5rem;
   font-weight: 500;
@@ -30,8 +30,8 @@
 }
 .active {
   font-weight: 500;
-  background-color: var(--primary);
-  color: var(--on-primary);
+  background-color: var(--secondary);
+  color: var(--on-secondary);
   text-decoration: none;
 }
 .pending {

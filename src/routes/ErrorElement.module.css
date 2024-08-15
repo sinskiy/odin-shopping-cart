@@ -1,0 +1,12 @@
+.error-element {
+  width: fit-content;
+  margin: auto;
+  text-align: center;
+}
+
+.nav {
+  margin-top: 1rem;
+
+  display: flex;
+  gap: 0.5rem;
+}

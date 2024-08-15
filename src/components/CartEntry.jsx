@@ -40,7 +40,7 @@ const CartEntry = ({ id, title, price, amount, imageUrl }) => {
             <button
               type="submit"
               style={{ marginTop: "1rem" }}
-              className="styled primary"
+              className="styled secondary"
             >
               delete
             </button>

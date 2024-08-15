@@ -1,0 +1,14 @@
+.total {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  background-color: var(--surface);
+  padding: 2rem;
+  border-radius: var(--rounded-card);
+
+  margin-bottom: 2rem;
+}
+.total h2 {
+  font-weight: 400;
+}

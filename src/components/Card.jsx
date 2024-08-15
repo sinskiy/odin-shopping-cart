@@ -54,7 +54,7 @@ const Card = ({ id, title, price, imageUrl, amount }) => {
           {amount && (
             <Form method="delete" action={`/cart/${id}`}>
               <input type="hidden" name="origin" value={location.pathname} />
-              <button type="submit" className="styled primary">
+              <button type="submit" className="styled secondary">
                 delete
               </button>
             </Form>

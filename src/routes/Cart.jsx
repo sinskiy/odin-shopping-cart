@@ -2,6 +2,7 @@ import { useLoaderData } from "react-router-dom";
 import { getCart } from "../cart";
 import { getCards } from "../cards";
 import CartEntry from "../components/CartEntry";
+import { total } from "./Cart.module.css";
 
 export async function cartLoader() {
   const cards = await getCards();
@@ -14,15 +15,34 @@ export async function cartLoader() {
 export default function Cart() {
   const { cards, cartEntries } = useLoaderData();
   const cartCards = cartEntries?.map(([id, amount]) => {
-    return { ...cards.find((card) => card.id == id), amount: amount };
+    return { ...cards.find((card) => card.id == id), amount };
   });
+  const totalPrice = cartCards.reduce(
+    (total, card) => (total += card.amount * card.price),
+    0,
+  );
+
   return (
     <section>
-      {cartCards.map((card) => (
-        <article key={card.id}>
-          <CartEntry imageUrl={card.image} {...card} />
-        </article>
-      ))}
+      {cartCards.length > 0 ? (
+        <>
+          <article className={total}>
+            <h2>
+              total price: <strong>{totalPrice}$</strong>
+            </h2>
+            <button type="button" className="styled primary">
+              checkout
+            </button>
+          </article>
+          {cartCards.map((card) => (
+            <article key={card.id}>
+              <CartEntry imageUrl={card.image} {...card} />
+            </article>
+          ))}
+        </>
+      ) : (
+        <p className={total}>Nothing added</p>
+      )}
     </section>
   );
 }

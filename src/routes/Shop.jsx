@@ -9,13 +9,18 @@ export async function shopLoader() {
 }
 
 export default function Shop() {
-  const ApiCards = useLoaderData();
+  const apiCards = useLoaderData();
   return (
     <section>
       <ul className={cards} role="list">
-        {ApiCards.map((card) => (
+        {apiCards.map((card) => (
           <li key={card.id}>
-            <Card title={card.title} price={card.price} imageUrl={card.image} />
+            <Card
+              id={card.id}
+              title={card.title}
+              price={card.price}
+              imageUrl={card.image}
+            />
           </li>
         ))}
       </ul>

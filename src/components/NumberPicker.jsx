@@ -2,7 +2,7 @@ import { string } from "prop-types";
 import { picker, pickerButton, pickerInput } from "./NumberPicker.module.css";
 import { useState } from "react";
 
-const NumberPicker = ({ id }) => {
+const NumberPicker = ({ id, name = id }) => {
   const buttonClasses = `${pickerButton} styled icon`;
 
   const [value, setValue] = useState(1);
@@ -27,7 +27,7 @@ const NumberPicker = ({ id }) => {
         min={1}
         type="number"
         className={pickerInput}
-        name={id}
+        name={name}
         id={id}
       />
       <button
@@ -42,6 +42,7 @@ const NumberPicker = ({ id }) => {
 };
 NumberPicker.propTypes = {
   id: string,
+  name: string,
 };
 
 export default NumberPicker;

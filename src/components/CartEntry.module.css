@@ -1,0 +1,6 @@
+.cartEntryTitle {
+  composes: cardTitle from "./Card.module.css";
+}
+.cartEntryPrice {
+  composes: cardPrice from "./Card.module.css";
+}

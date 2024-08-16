@@ -28,6 +28,10 @@
 .nav-link {
   padding: 0.25rem 1rem;
   border-radius: var(--rounded);
+
+  display: flex;
+  gap: 0.25rem;
+  align-items: center;
 }
 .nav-link svg {
   height: 1.25rem;

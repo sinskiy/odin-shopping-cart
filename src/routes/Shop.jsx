@@ -1,8 +1,9 @@
-import { useLoaderData } from "react-router-dom";
+import { useLoaderData, useOutletContext } from "react-router-dom";
 import { getCards } from "../cards";
 import Card from "../components/Card";
 import { cards } from "./Shop.module.css";
 import { getCart } from "../cart";
+import { useEffect } from "react";
 
 export async function shopLoader() {
   const cards = await getCards();
@@ -14,6 +15,11 @@ export async function shopLoader() {
 
 export default function Shop() {
   const { cards: apiCards, cartEntries } = useLoaderData();
+
+  const setCartLength = useOutletContext();
+  useEffect(() => {
+    setCartLength(cartEntries.length);
+  }, [cartEntries.length]);
 
   return (
     <section>

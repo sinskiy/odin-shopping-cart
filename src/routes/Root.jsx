@@ -1,4 +1,4 @@
-import { Fragment } from "react";
+import { Fragment, useState } from "react";
 import routes from ".";
 import {
   header,
@@ -13,6 +13,8 @@ import { Link, NavLink, Outlet } from "react-router-dom";
 
 export default function Root() {
   const links = routes[0].children[0].children;
+  const [cartLength, setCartLength] = useState(0);
+
   return (
     <>
       <header className={header}>
@@ -31,6 +33,7 @@ export default function Root() {
                   aria-label={link.label && link.label}
                 >
                   {link.name ? link.name : link.icon}
+                  {link.label === "cart" && cartLength}
                 </NavLink>
               )}
             </Fragment>
@@ -38,7 +41,7 @@ export default function Root() {
         </nav>
       </header>
       <main>
-        <Outlet />
+        <Outlet context={setCartLength} />
       </main>
     </>
   );

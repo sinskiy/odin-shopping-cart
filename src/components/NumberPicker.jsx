@@ -21,7 +21,7 @@ const NumberPicker = ({ value, setValue, id, name = id }) => {
       </button>
       <input
         value={value}
-        onChange={(e) => handleValueChange(e.target.value)}
+        onChange={(e) => handleValueChange(Number(e.target.value))}
         min={1}
         type="number"
         className={pickerInput}

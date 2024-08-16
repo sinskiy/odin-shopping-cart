@@ -23,10 +23,14 @@
 
 .nav {
   display: flex;
+  align-items: center;
 }
 .nav-link {
   padding: 0.25rem 1rem;
   border-radius: var(--rounded);
+}
+.nav-link svg {
+  height: 1.25rem;
 }
 .active {
   font-weight: 500;

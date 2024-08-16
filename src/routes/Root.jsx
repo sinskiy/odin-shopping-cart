@@ -28,8 +28,9 @@ export default function Root() {
                     `${isActive ? active : isPending ? pending : ""} ${navLink} ${link.index ? indexNavLink : ""}`
                   }
                   to={link.index ? "/" : link.path}
+                  aria-label={link.label && link.label}
                 >
-                  {link.name}
+                  {link.name ? link.name : link.icon}
                 </NavLink>
               )}
             </Fragment>

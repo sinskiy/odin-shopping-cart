@@ -1,3 +1,4 @@
+import { ShoppingCart } from "lucide-react";
 import Cart, { cartLoader } from "./Cart";
 import { destroyAction } from "./Destroy";
 import ErrorElement from "./ErrorElement";
@@ -24,7 +25,8 @@ const routes = [
           },
           {
             path: "/cart",
-            name: "cart",
+            icon: <ShoppingCart />,
+            label: "cart",
             element: <Cart />,
             loader: cartLoader,
           },
